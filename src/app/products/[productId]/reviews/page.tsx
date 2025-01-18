@@ -1,11 +1,23 @@
-export default function Reviews({params} : {
-    params:{
-        productId: string;
+"use client"
+
+import { useEffect } from "react";
+
+export default function Reviews({ params }: { params: { productId: string } }) {
+
+
+  function throwError(num:number): void {
+    if(num==1){
+        throw new Error("Input must be a non-negative number");
     }
-}){
-    return (
-        <>
-            Product Review of Product {params.productId}
-        </>
-    )
+  }
+
+  useEffect(() => {
+    throwError(2);
+  }, [])
+
+  return (
+    <>
+      Product Review of Product {params.productId}
+    </>
+  );
 }
